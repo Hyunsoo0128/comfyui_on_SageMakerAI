@@ -7,6 +7,8 @@
 3. [ComfyUI 기동 및 접속](#step-3-comfyui-기동-및-접속)
 4. [ComfyUI 워크플로 불러오기 및 GUI 초기 설정](#step-4-comfyui-워크플로-불러오기-및-gui-초기-설정)
 5. [ComfyUI 워크플로 실행하기](#step-5-comfyui-워크플로-실행하기)
+6. [결과 이미지 확인](#step-6-결과-이미지-확인)
+7. [워크플로 추가 설명](#step-7-워크플로-추가-설명)
 
 ## Step 1. Amazon SageMaker AI Studio 환경 설정
 AWS Management Console에 접속하여, SageMaker AI 선택 --> SageMaker Studio
@@ -108,3 +110,5 @@ ComfyUI의 GUI 화면에 워크플로가 정상적으로 로드된 것을 확인
 2차 보완 이미지를 4배로 upscale한 이미지
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_tdmpe_00005_.png" />
 
+## Step 7. 워크플로 추가 설명
+좌측 세개의 이미지 로더 노드를 통해 상품 이미
