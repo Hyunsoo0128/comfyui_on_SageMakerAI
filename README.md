@@ -6,6 +6,7 @@
 2. [ComfyUI 설치 및 환경 설정](#2-comfyui-설치-및-환경-설정)
 3. [ComfyUI 기동 및 접속](#3-comfyui-기동-및-접속)
 4. [ComfyUI 워크플로 불러오기 및 GUI 초기 설정](#4-comfyui-워크플로-불러오기-및-gui-초기-설정)
+5. [ComfyUI 워크플로 실행하기](#5-comfyui-워크플로-실행하기)
 
 ## Step 1. Amazon SageMaker AI Studio 환경 설정
 AWS Management Console에 접속하여, SageMaker AI 선택 --> SageMaker Studio
@@ -28,6 +29,8 @@ https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI.git
 본 파일에서는 ComfyUI 설치 및 환경 설정을 실행 한 후, 필수 AI 모델을 다운로드한다.
 모든 셀의 동작이 완전히 완료된 후 다음 단계로 넘어간다.
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/4.png" />
+* 복제된 프로젝트 폴더 내에 존재하는 "/workflow_temp"와 "/input_img" 두개 폴더를 로컬 컴퓨터에 다운로드한다.
+* "/workflow_temp"에는 미리 작성한 comfyUI 워크플로 예제가 저장되어 있으며, "/input_img"에는 워크플로 예제에서 사용하기 위한 이미지 파일이 저장되어 있다.
 
 ## Step 3. ComfyUI 기동 및 접속
 이어서, ComfyUI_Start.ipynb를 선택한다.
@@ -50,6 +53,8 @@ https://<스튜디오-ID>.studio.<리전>.sagemaker.aws/jupyter/default/proxy/81
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/7.png" />
 
 상단 메뉴바에서 워크플로를 클릭한 후, 열기를 클릭하여 사전에 공유된 워크플로 파일을 불러온다.
+* 로컬 컴퓨터에 다운로드한 "/workflow_temp" 폴더 내의 워크플로 파일을 선택한다.
+* 본 예제에서는 item_with_bg_beta.json 파일을 선택하였음. 
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/8.png" />
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/9.png" />
 
@@ -70,5 +75,5 @@ ComfyUI Manager를 열어 상기 세개의 노드팩을 모두 설치한다.
 ComfyUI의 GUI 화면에 워크플로가 정상적으로 로드된 것을 확인할 수 있다.
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/13.png" />
 
-
-
+## Step 5. ComfyUI 워크플로 실행하기
+작성 중
