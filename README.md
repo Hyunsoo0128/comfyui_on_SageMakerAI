@@ -2,6 +2,11 @@
 이 저장소는 Amazon SageMaker AI Studio에서 ComfyUI를 설치하고 실행하는 방법을 안내합니다.
 
 ## 목차
+1. [SageMaker AI Studio 환경 설정](#step-1-amazon-sagemaker-ai-studio-환경-설정)
+2. [ComfyUI 설치 및 환경 설정](#step-2-주피터랩-스페이스에서-comfyui-설치-및-환경-설정)
+3. [ComfyUI 기동 및 접속](#step-3-comfyui-기동-및-접속)
+4. [ComfyUI 워크플로 불러오기 및 GUI 초기 설정](#step-4-comfyui-워크플로-불러오기-및-gui-초기-설정)
+5. [ComfyUI 워크플로 실행하기](#step-5-comfyui-워크플로-실행하기)
 1. [SageMaker AI Studio 환경 설정](#1-sagemaker-ai-studio-환경-설정)
 2. [ComfyUI 설치 및 환경 설정](#2-comfyui-설치-및-환경-설정)
 3. [ComfyUI 기동 및 접속](#3-comfyui-기동-및-접속)
