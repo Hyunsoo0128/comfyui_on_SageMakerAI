@@ -111,21 +111,21 @@ ComfyUI의 GUI 화면에 워크플로가 정상적으로 로드된 것을 확인
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_tdmpe_00005_.png" />
 
 ## Step 7. 워크플로 추가 설명
-# 목적 : AI 기반 제품 이미지 자동 생성
+### 목적 : AI 기반 제품 이미지 자동 생성
 해당 ComfyUI 워크플로는 3개의 입력 이미지(상품, 구도, 스타일)를 활용하여, 전문적인 느낌의 고해상도 제품 홍보 이미지를 생성하도록 설계되었습니다. 
 복잡한 배경 생성과 합성을 자동화하여 작업 효율을 극대화합니다.
 
-# 주요 기능
+### 주요 기능
 * 다중 컨트롤넷(Multi-ControlNet) 제어: 깊이(Depth)와 캐니(Canny) 맵을 동시에 사용하여 상품의 입체감과 전체적인 구도를 정교하게 제어합니다.
 * IPAdapter를 통한 스타일 전이: 특정 실내 공간 이미지의 스타일(조명, 색감, 질감)을 생성될 배경에 완벽하게 적용합니다.
 * 인페인팅(Inpainting)을 활용한 배경 생성: 상품 이미지를 제외한 배경 영역에만 새로운 이미지를 생성하여 자연스러운 합성을 구현합니다.
 * 다단계 KSampler 리파인먼트: 여러 단계의 KSampler를 거치며 이미지의 디테일과 완성도를 점진적으로 향상시킵니다.
 * 고해상도 업스케일링: 최종 결과물을 4배 업스케일링하여 상업적 용도로도 손색없는 고품질 이미지를 제공합니다.
 
-# 워크플로우 상세 설명
+### 워크플로우 상세 설명
 이 워크플로우는 크게 입력 및 전처리, 1차 배경 생성, 2-3차 리파인먼트, 최종 업스케일링의 4단계로 구성됩니다.
 
-1. 입력 및 전처리 (Inputs & Preprocessing)
+#### 1. 입력 및 전처리 (Inputs & Preprocessing)
 1.1. 상품 이미지 (Product Image):
 Image Rembg 노드를 통해 배경이 자동으로 제거됩니다.
 DepthAnythingPreprocessor로 깊이 맵을 추출하여 상품의 3D 형태를 유지하는 데 사용됩니다.
@@ -138,13 +138,13 @@ CannyEdgePreprocessor를 통해 외곽선(Edge)을 추출하여 바닥, 벽 등 
 원하는 분위기의 실내 공간 사진입니다.
 이 이미지는 IPAdapterAdvanced 노드에 직접 입력되어 생성될 배경의 스타일을 결정합니다.
 
-2. 1차 배경 생성 (Pass 1: Background Generation via Inpainting)
+#### 2. 1차 배경 생성 (Pass 1: Background Generation via Inpainting)
 2.1. 배경이 제거된 상품 이미지에서 마스크(Mask)를 생성하고, 이를 반전(Invert Mask)시켜 배경 영역만 선택합니다.
 2.2. VAEEncodeForInpaint 노드는 이 마스크를 기반으로 배경 영역만 Latent 공간에서 비워둡니다.
 2.3. ControlNet(Depth, Canny)과 IPAdapter(Style)의 조건이 모두 적용된 상태에서 KSampler가 비어있는 배경 영역을 채우며 이미지를 생성합니다.
 이 단계의 결과물은 상품과 배경이 최초로 합쳐진 이미지입니다.
 
-3. 2-3차 리파인먼트 (Pass 2 & 3: Refinement)
+#### 3. 2-3차 리파인먼트 (Pass 2 & 3: Refinement)
 3.1. 추가 KSampler with IPAdapter:
 생성된 초안 이미지를 다시 Latent로 변환한 후, 낮은 denoise 값(예: 0.4)으로 다시 샘플링합니다.
 이 과정에서 IPAdapter와 ControlNet의 영향을 받으며 상품과 배경이 더욱 자연스럽게 어우러지고 스타일이 강화됩니다.
@@ -152,7 +152,7 @@ CannyEdgePreprocessor를 통해 외곽선(Edge)을 추출하여 바닥, 벽 등 
 1차 보완 결과물을 다시 Latent로 변환하고, 더 낮은 denoise 값(예: 0.2)으로 최종 샘플링을 진행합니다.
 이 단계에서는 IPAdapter의 영향을 받지 않는 기본 모델을 사용하여 이미지의 전반적인 디테일을 정리하고 완성도를 높입니다.
 
-4. 최종 업스케일링 (Final Upscaling)
+#### 4. 최종 업스케일링 (Final Upscaling)
 모든 리파인먼트 과정이 끝난 이미지는 ImageUpscaleWithModel 노드로 전달됩니다.
 4x-UltraSharp과 같은 업스케일링 모델을 사용하여 최종 결과물을 고해상도로 변환합니다.
 
