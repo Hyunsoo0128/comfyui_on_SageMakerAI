@@ -76,4 +76,8 @@ ComfyUI의 GUI 화면에 워크플로가 정상적으로 로드된 것을 확인
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/13.png" />
 
 ## Step 5. ComfyUI 워크플로 실행하기
-작성 중
+좌측 세개의 이미지 로더 노드를 통해 상품 이미지, 구도 스케치 이미지, 스타일 이미지를 순서대로 입력한다.
+이어서, 하단의 실행 버튼을 클릭하여 워크플로를 실행한다.
+실행 순서대로 우측 이미지 프리뷰 노드를 통해 생성된 이미지를 확인할 수 있다.
+<img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/14.png" />
+
