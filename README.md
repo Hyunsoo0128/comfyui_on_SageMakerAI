@@ -110,33 +110,6 @@ ComfyUI의 GUI 화면에 워크플로가 정상적으로 로드된 것을 확인
 2차 보완 이미지를 4배로 upscale한 이미지
 <img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_tdmpe_00005_.png" />
 
-
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_fdtnx_00006_.png"" /><br/>
-      원본 상품 이미지
-    </td>
-    <td>
-      <img src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_jnkxy_00017_.png" /><br/>
-      배경 생성 초안 이미지
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_ijgfb_00017_.png" /><br/>
-      1차 보완 이미지
-    </td>
-    <td>
-      <img src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_geayj_00017_.png" /><br/>
-      2차 보완 이미지
-    </td>
-  </tr>
-</table>
-
-2차 보완 이미지를 4배로 upscale한 이미지
-<img width="4418" height="1998" alt="1" src="https://github.com/Hyunsoo0128/comfyui_on_SageMakerAI/blob/main/img/ComfyUI_temp_tdmpe_00017_.png" />
-
 ## Step 7. 워크플로 추가 설명
 ### 목적 : AI 기반 제품 이미지 자동 생성
 해당 ComfyUI 워크플로는 3개의 입력 이미지(상품, 구도, 스타일)를 활용하여, 전문적인 느낌의 고해상도 제품 홍보 이미지를 생성하도록 설계되었습니다. 
